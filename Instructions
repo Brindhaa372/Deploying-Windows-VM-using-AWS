@@ -1,0 +1,72 @@
+# How to Launch a Windows VM on AWS EC2
+
+Follow these steps to deploy a Windows-based virtual machine on Amazon EC2:
+
+---
+
+##  Step 1: Sign In to AWS Console
+
+- Visit [https://aws.amazon.com/](https://aws.amazon.com/) and log in.
+- Navigate to Services > EC2.
+
+---
+
+##  Step 2: Launch a Windows Instance
+
+1. Click Launch Instance.
+2. Enter a name (e.g., `Windows-Test-VM`).
+3. Under Application and OS Images (AMI), choose:
+   - Amazon Linux AMI.
+4. Select an instance type:
+   - t2.micro (Free Tier eligible).
+5. Click **Create new key pair**:
+   - Choose `.pem`, name it, and download securely.
+
+---
+
+##  Step 3: Configure Network and Security
+
+- Under Network settings:
+  - Allow RDP (port 3389) from your IP only.
+- Keep other defaults unless needed.
+
+---
+
+## Step 4: Launch and Connect
+
+1. Click Launch Instance.
+2. Go to Instances, wait until state is running.
+3. Select the instance → Click Connect → Choose RDP Client.
+4. Download RDP file and retrieve Administrator password using `.pem`.
+
+---
+
+## Step 5: Remote Access
+
+- Open the RDP file on your system.
+- Use retrieved credentials to access the Windows VM.
+- Once inside, explore, install apps, or test scripts.
+
+---
+
+## Step 6: (Optional) Install Tools on the VM
+
+Once connected:
+- Open PowerShell as Administrator.
+- Install tools like Chrome, VS Code, etc., via browser or script.
+
+---
+
+## Cleanup Instructions
+
+To avoid being charged:
+1. Go to EC2 Dashboard → Instances.
+2. Select your instance and click Terminate.
+
+---
+
+##  Notes
+
+- Free tier offers 750 hours/month for t2.micro.
+- Avoid keeping instances running if not needed.
+
